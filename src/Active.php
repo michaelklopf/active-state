@@ -137,7 +137,7 @@ class Active
     }
 
     /**
-     * Check if query has all of the given parameters, not taking their values into account
+     * Check if query has not any of the given parameters
      * @param  array  $parameters
      * @return boolean
      */
@@ -252,10 +252,10 @@ class Active
     }
 
     /**
-     * Returns activeValue or inactiveValue for checkQueryHas test
+     * Returns activeValue or inactiveValue for checkQueryHasNot test
      * @param  string  $parameters
      * @return string  Active state string
-     * @see Active::checkQueryHas()
+     * @see Active::checkQueryHasNot()
      */
     public function ifQueryHasNot(...$parameters)
     {
