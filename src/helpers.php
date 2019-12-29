@@ -72,6 +72,18 @@ if (! function_exists('active_query_has')) {
     }
 }
 
+if (! function_exists('active_query_has_not')) {
+    /**
+     * @see Arcesilas\ActiveState\Active::ifQueryHas()
+     * @param array $parameters  The parameters to check iin the query string
+     * @return string
+     */
+    function active_query_has_not(...$parameters)
+    {
+        return app('active-state')->ifQueryHasNot(...$parameters);
+    }
+}
+
 if (! function_exists('active_query_has_only')) {
     /**
      * @see Arcesilas\ActiveState\Active::ifQueryHasOnly()

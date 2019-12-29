@@ -137,6 +137,16 @@ class Active
     }
 
     /**
+     * Check if query has not any of the given parameters
+     * @param  array  $parameters
+     * @return boolean
+     */
+    public function checkQueryHasNot(...$parameters)
+    {
+        return ! $this->checkQueryHas(...$parameters);
+    }
+
+    /**
      * Check if query parameters names are exactly the ones given in argument
      * The order of the parameters does not matter
      * @param  string[]  $parameters string
@@ -239,6 +249,17 @@ class Active
     public function ifQueryHas(...$parameters)
     {
         return $this->check('checkQueryHas', $parameters);
+    }
+
+    /**
+     * Returns activeValue or inactiveValue for checkQueryHasNot test
+     * @param  string  $parameters
+     * @return string  Active state string
+     * @see Active::checkQueryHasNot()
+     */
+    public function ifQueryHasNot(...$parameters)
+    {
+        return $this->check('checkQueryHasNot', $parameters);
     }
 
     /**
